@@ -5,11 +5,11 @@ import java.util.List;
 
 public class PrimeFinderThread extends Thread{
 
-	
 	int a,b;
-	
-	private List<Integer> primes=new LinkedList<Integer>();
-	
+	private boolean paused = false;
+    private final Object lock = new Object();
+    private List<Integer> primes=new LinkedList<Integer>();
+
 	public PrimeFinderThread(int a, int b) {
 		super();
 		this.a = a;
@@ -17,16 +17,23 @@ public class PrimeFinderThread extends Thread{
 	}
 
 	public void run(){
-		for (int i=a;i<=b;i++){						
+        for (int i=a;i<=b;i++){
+            synchronized (lock){
+                while(paused){
+                    try {
+                        lock.wait();
+                    } catch (InterruptedException e) {}
+                }
+            }
 			if (isPrime(i)){
 				primes.add(i);
 				System.out.println(i);
 			}
 		}
-		
-		
+
+
 	}
-	
+
 	boolean isPrime(int n) {
 	    if (n%2==0) return false;
 	    for(int i=3;i*i<=n;i+=2) {
@@ -39,8 +46,19 @@ public class PrimeFinderThread extends Thread{
 	public List<Integer> getPrimes() {
 		return primes;
 	}
-	
-	
-	
-	
+
+    public void pauseThread() {
+        synchronized (lock) {
+            paused = true;
+        }
+    }
+
+    public void resumeThread() {
+        synchronized (lock) {
+            paused = false;
+            lock.notify();
+        }
+    }
+
+
 }
