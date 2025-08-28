@@ -76,13 +76,13 @@ Taller.
     deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
 
     Se agrega esto a los metodos del main
-    ![](/img/media/parte%202,%20punto%203.png)
+    ![](/img/media/parte%202,%20punto%204%20main.png)
 
     Se le agrega esto a los run de galgo antes de la verficacion de llegada
-    ![](/img/media/parte%202,%20punto%203.png)
+    ![](/img/media/parte%202,%20punto%204%20run.png)
     
     Se agregan los metodos a galgo para pausa y continuar
-    ![](/img/media/parte%202,%20punto%203.png)
+    ![](/img/media/parte%202,%20punto%204%20metodos.png)
 
 ## Criterios de evaluación
 
