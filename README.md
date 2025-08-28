@@ -2,9 +2,9 @@ Escuela Colombiana de Ingeniería
 
 Arquitecturas de Software – ARSW
 
-####Taller – programación concurrente, condiciones de carrera y sincronización de hilos. EJERCICIO INDIVIDUAL O EN PAREJAS.
+#### Taller – programación concurrente, condiciones de carrera y sincronización de hilos. EJERCICIO INDIVIDUAL O EN PAREJAS.
 
-#####Parte I – Antes de terminar la clase.
+##### Parte I – Antes de terminar la clase.
 
 Creación, puesta en marcha y coordinación de hilos.
 
@@ -24,7 +24,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 ![image](./img/media/3threads2.png)
 
-#####Parte II 
+##### Parte II 
 
 
 Para este ejercicio se va a trabajar con un simulador de carreras de galgos (carpeta parte2), cuya representación gráfica corresponde a la siguiente figura:
@@ -52,6 +52,9 @@ Taller.
 
     b.  Puede utilizarse el método join() de la clase Thread para sincronizar el hilo que inicia la carrera, con la finalización de los hilos de los galgos.
 
+    ![](/img/media/parte%202,%20punto%201.png)
+    ![](/img/media/parte%202,%20punto%201.png)
+
 2.  Una vez corregido el problema inicial, corra la aplicación varias
     veces, e identifique las inconsistencias en los resultados de las
     mismas viendo el ‘ranking’ mostrado en consola (algunas veces
@@ -59,15 +62,27 @@ Taller.
     dichas inconsistencias). A partir de esto, identifique las regiones
     críticas () del programa.
 
+    ![](/img/media/parte%202,%20punto%202.png)
+
 3.  Utilice un mecanismo de sincronización para garantizar que a dichas
     regiones críticas sólo acceda un hilo a la vez. Verifique los
     resultados.
+
+    ![](/img/media/parte%202,%20punto%203.png)
 
 4.  Implemente las funcionalidades de pausa y continuar. Con estas,
     cuando se haga clic en ‘Stop’, todos los hilos de los galgos
     deberían dormirse, y cuando se haga clic en ‘Continue’ los mismos
     deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
 
+    Se agrega esto a los metodos del main
+    ![](/img/media/parte%202,%20punto%203.png)
+
+    Se le agrega esto a los run de galgo antes de la verficacion de llegada
+    ![](/img/media/parte%202,%20punto%203.png)
+    
+    Se agregan los metodos a galgo para pausa y continuar
+    ![](/img/media/parte%202,%20punto%203.png)
 
 ## Criterios de evaluación
 
